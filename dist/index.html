@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://benjamine.github.io/jsondiffpatch/demo/style.css"/>
+    <link rel="stylesheet" href="https://benjamine.github.io/jsondiffpatch/formatters-styles/html.css"/>
+    <link rel="stylesheet" href="https://benjamine.github.io/jsondiffpatch/formatters-styles/annotated.css"/>
+
+    <style>
+
+        * {
+            box-sizing: border-box
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .col {
+            flex: 1;
+            margin: 10px;
+            max-width: 50%;
+        }
+
+        .input {
+            border: 1px dashed gray;
+            overflow: auto;
+            width: 100%;
+            min-height: 200px;
+            max-height: 600px;
+            white-space: pre;
+            font-family: monospace;
+        }
+
+        .jsondiffpatch-unchanged {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<button id="merge-em">Merge 'Em</button>
+<select name="switch-lang" id="switch-lang">
+    <option value="fr-ca-CAD">Fr-CA|CAD</option>
+    <option value="es-us-USD">Es-US|USD</option>
+    <option value="zh-hk-HKD">zh-hk|HKD</option>
+</select>
+<div class="container">
+    <div class="col">
+        <h2 id="merged-lang-title">Merged (fr-ca-CAD)</h2>
+        <div class="input" id="merged" contenteditable></div>
+    </div>
+    <div class="col">
+        <h2 id="default-lang-title">Default</h2>
+        <div class="input" id="default" contenteditable></div>
+    </div>
+</div>
+
+<div>
+    <h2 id="override-lang-title">Override (fr-ca-CAD)</h2>
+    <div class="input" id="override"></div>
+</div>
+
+<script src="/main.js"></script>
+</body>
+</html>
